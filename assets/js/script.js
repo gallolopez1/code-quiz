@@ -31,120 +31,120 @@ const questions = [{
     // {
     //     question: "Which of the following is NOT a data type in JavaScript?",
     //     choices: [
-    //         "1. number",
-    //         "2. string",
-    //         "3. character",
-    //         "4. boolean"
+    //         "number",
+    //         "string",
+    //         "character",
+    //         "boolean"
     //     ],
     //     answer: "character"
     // },
     // {
     //     question: "Which of the following functions will NOT interact with the user?",
     //     choices: [
-    //         "1. print();",
-    //         "2. alert();",
-    //         "3. prompt();",
-    //         "4. confirm();"
+    //         "print();",
+    //         "alert();",
+    //         "prompt();",
+    //         "confirm();"
     //     ],
     //     answer: "print()",
     // },
     // {
     //     question: "Of the following logical operators in JavaScript, which one represents (NOT)?",
     //     choices: [
-    //         "1. ||",
-    //         "2. &&",
-    //         "3. !",
-    //         "4. ??"
+    //         "||",
+    //         "&&",
+    //         "!",
+    //         "??"
     //     ],
     //     answer: "!",
     // },
     // {
     //     question: "Normally, a loop exists when the condition becomes falsy. But we can force the exit at any time with the special ______ directive.",
     //     choices: [
-    //         "1. stop",
-    //         "2. end",
-    //         "3. alert",
-    //         "4. break"
+    //         "stop",
+    //         "end",
+    //         "alert",
+    //         "break"
     //     ],
     //     answer: "break",
     // },
     // {
     //     question: "A ______ statement can replace multiple (if) checks.",
     //     choices: [
-    //         "1. switch",
-    //         "2. while",
-    //         "3. for",
-    //         "4. continue"
+    //         "switch",
+    //         "while",
+    //         "for",
+    //         "continue"
     //     ],
     //     answer: "switch",
     // },
     // {
     //     question: "A variable inside a function is only visible inside that function and is known as a ______ .",
     //     choices: [
-    //         "1. local variable",
-    //         "2. outer variable",
-    //         "3. global variable",
-    //         "4. parameter"
+    //         "local variable",
+    //         "outer variable",
+    //         "global variable",
+    //         "parameter"
     //     ],
     //     answer: "local variable",
     // },
     // {
     //     question: "The ______ helps with the process of finding and fixing errors within a script.",
     //     choices: [
-    //         "1. DOM",
-    //         "2. console.log()",
-    //         "3. debugger",
-    //         "4. parameter"
+    //         "DOM",
+    //         "console.log()",
+    //         "debugger",
+    //         "parameter"
     //     ],
     //     answer: "debugger",
     // },
     // {
     //     question: " ______ appends new elements to the end of an array, and returns the new length of an array.",
     //     choices: [
-    //         "1. concat()",
-    //         "2. push()",
-    //startTimer         "3. .join",
-    //         "4. parseInt()"
+    //         "concat()",
+    //         "push()",
+    //         ".join",
+    //         "parseInt()"
     //     ],
     //     answer: "push()",
     // },
     // {
     //     question: " When saving to local storage, remember to ______ in order to convert the object to a string.",
     //     choices: [
-    //         "1. Storage.setItem()",
-    //         "2. JSON.parse()",
-    //         "3. JSON.stringify()",
-    //         "4. Storage.getItem()"
+    //         "Storage.setItem()",
+    //         "JSON.parse()",
+    //         "JSON.stringify()",
+    //         "Storage.getItem()"
     //     ],
     //     answer: "JSON.stringify()",
     // },
     // {
     //     question: " ______ executes the callback repeatedly at a set interval.",
     //     choices: [
-    //         "1. set.Timeou()",
-    //         "2. loop",
-    //         "3. callback",
-    //         "4. setInterval"
+    //         "set.Timeou()",
+    //         "loop",
+    //         "callback",
+    //         "setInterval"
     //     ],
     //     answer: "setInterval",
     // },
     // {
     //     question: " Which is a DOM element method?",
     //     choices: [
-    //         "1. setAttribute()",
-    //         "2. getAttribute()",
-    //         "3. removeAttribute()",
-    //         "4. All of the above"
+    //         "setAttribute()",
+    //         "getAttribute()",
+    //         "removeAttribute()",
+    //         "All of the above"
     //     ],
     //     answer: "All of the above",
     // },
     // {
     //     question: " This library includes new methods to make elements sortable, draggable, droppable, etc.",
     //     choices: [
-    //         "1. jQuery",
-    //         "2. Bootstrap",
-    //         "3. Moment.js",
-    //         "4. jQuery UI"
+    //         "jQuery",
+    //         "Bootstrap",
+    //         "Moment.js",
+    //         "jQuery UI"
     //     ],
     //     answer: "jQuery UI",
     // }
@@ -159,7 +159,7 @@ var mainView = document.querySelector("main");
 var timerEl = document.querySelector("#timer");
 var qID = 0;
 var score = 0;
-var timeLeft = 5;
+var timeLeft = 100;
 
 //when I click the start button I remove the introduction and I move on to the next step which is to load a question
 let startQuiz = function() {
@@ -249,8 +249,42 @@ function gameOver() {
     let thirdDiv = document.createElement("div");
     thirdDiv.className = "row align-items-center";
 
+    let fourthDiv = document.createElement("div");
+    fourthDiv.className = "col";
+
     let h2 = document.createElement("h2");
-    h2
+    h2.className = ("text-decoration-underline")
+    h2.textContent = "All done!";
+
+    let p = document.createElement("p");
+    p.id = ("score")
+    p.textContent = "Your final score is " + finalScore;
+
+    let form = document.createElement("form");
+    form.className = ("form");
+
+    let fifthDiv = document.createElement("div");
+    fifthDiv.className = ("form-group");
+
+    let label = document.createElement("label");
+    label.className = ("nameInitials");
+
+    let input = document.createElement("input");
+    input.id = ("name-initials");
+    input.type = ("text");
+    input.name = ("name-initials");
+
+    fifthDiv.appendChild(input);
+    fifthDiv.appendChild(label);
+    form.appendChild(fifthDiv);
+    fourthDiv.appendChild(form);
+    fourthDiv.appendChild(p);
+    fourthDiv.appendChild(h2);
+    thirdDiv.appendChild(fourthDiv);
+    secondDiv.appendChild(thirdDiv);
+    primaryDiv.appendChild(secondDiv);
+    mainView.appendChild(primaryDiv);
+
 };
 
 
