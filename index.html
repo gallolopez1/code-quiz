@@ -23,7 +23,9 @@
                         <a class="text-decoration-none" href="high-scores.html">View high scores</a>
                     </div>
                     <div class="col">
-                        <div class="timer"></div>
+                        <div class="timer">
+                            <h4 style="text-align: end;">Timer: <span id="timer">0</span></h4>
+                        </div>
                     </div>
                 </div>
         </header>
@@ -31,47 +33,43 @@
             <div class="container" id="quiz-start">
                 <div class="row align-items-center">
                     <div class="col-12 text-center">
-                        <h2 class="title">
+                        <h2 class="title text-decoration-underline">
                             CODING QUIZ CHALLENGE
                         </h2>
                         <br>
                         <p>
-                            Try to answer the following code-related question within the time limit. Keep in mind that incorrect answers will penalize your score/time by ten seconds!
+                            Try to answer the following code-related question within the time limit. <br> Keep in mind that incorrect answers will penalize your score/time by ten seconds!
                         </p>
                         <br>
-                        <button class="btn" id="btn-start">
+                        <button class="btn" id="btn-start" onclick="startQuiz()">
                             Start Quiz
                         </button>
                     </div>
                 </div>
-                <div class="verify-answers hide">
-                    <p id="wrong-answer">
-                        Wrong!
-                    </p>
-                    <p id="correct-answer">
-                        Correct!
-                    </p>
-                </div>
             </div>
-
-            <div class="quiz-end hide">
-                <h2>
-                    All done!
-                </h2>
-                <p id="score"></p>
-                <form>
-                    <div class="form-group">
-                        <label for="nameInitials">Enter initials</label>
-                        <input type="text" id="name-initials" name="name-initials">
+            <div class="quiz-end">
+                <div class="container">
+                    <div class="row">
+                        <div class="col">
+                            <h2>
+                                All done!
+                            </h2>
+                            <p id="score"></p>
+                            <form>
+                                <div class="form-group">
+                                    <label for="nameInitials">Enter initials</label>
+                                    <input type="text" id="name-initials" name="name-initials">
+                                </div>
+                            </form>
+                            <button class="btn" id=submit>
+                                Submit
+                            </button>
+                        </div>
                     </div>
-                </form>
-                <button class="btn" id=submit>
-                    Submit
-                </button>
+                </div>
             </div>
         </main>
         </div>
-        <script src="assets\js\questions.js"></script>
         <script src="assets\js\script.js"></script>
 </body>
 
