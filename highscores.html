@@ -15,19 +15,21 @@
 </head>
 
 <body onload="displayHighScore()">
-    <div class="row align-space-between min-vh-100 m-0 align-items-center">
-        <div div class="container" id="high-scores">
-            <div class="col align-items-center text-center p-5">
+    <div class="container">
+        <div div class="row min-vh-100 m-0 align-items-center" id="high-scores">
+            <div class="col align-space-between text-center align-items-center d-flex flex-column">
                 <h2 class="title text-decoration-underline text-center">
                     High Scores
                 </h2>
                 <ol id="highScoreList"></ol>
-                <button class="btn" onclick="location.href='index.html'" type="button">
-                    Go back
-                </button>
-                <button onclick="clearHighScore()" class="btn" id="clear-high-scores">
-                    Clear high scores
-                </button>
+                <div class="col">
+                    <button class="btn m-1" onclick="location.href='index.html'" type="button">
+                        Go back
+                    </button>
+                    <button onclick="clearHighScore()" class="btn m-1" id="clear-high-scores">
+                        Clear high scores
+                    </button>
+                </div>
             </div>
         </div>
     </div>

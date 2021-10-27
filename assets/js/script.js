@@ -248,16 +248,16 @@ function gameOver() {
         current.remove();
     }
     let primaryDiv = document.createElement("div");
-    primaryDiv.className = "quiz-end";
+    primaryDiv.className = "quiz-end text-center";
 
     let secondDiv = document.createElement("div");
     secondDiv.className = "container";
 
     let thirdDiv = document.createElement("div");
-    thirdDiv.className = "row align-items-center";
+    thirdDiv.className = "row";
 
     let fourthDiv = document.createElement("div");
-    fourthDiv.className = "col";
+    fourthDiv.className = "col align-items-center";
 
     let h2 = document.createElement("h2");
     h2.className = ("text-decoration-underline")
