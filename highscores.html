@@ -14,24 +14,24 @@
     <title>High Scores</title>
 </head>
 
-<body>
+<body onload="displayHighScore()">
     <div class="row align-space-between min-vh-100 m-0 align-items-center">
         <div div class="container" id="high-scores">
             <div class="col align-items-center text-center p-5">
                 <h2 class="title text-decoration-underline text-center">
                     High Scores
                 </h2>
-                <div></div>
+                <ol id="highScoreList"></ol>
                 <button class="btn" onclick="location.href='index.html'" type="button">
                     Go back
                 </button>
-
-                <button class="btn" id="clear-high-scores">
+                <button onclick="clearHighScore()" class="btn" id="clear-high-scores">
                     Clear high scores
                 </button>
             </div>
         </div>
     </div>
+    <script src="assets\js\script.js"></script>
 </body>
 
 </html>

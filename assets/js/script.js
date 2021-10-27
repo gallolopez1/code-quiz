@@ -157,9 +157,11 @@ const questions = [{
 let generateBtn = document.querySelector("#btn-start")
 var mainView = document.querySelector("main");
 var timerEl = document.querySelector("#timer");
+var highScoreList = document.querySelector("#highScoreList");
 var qID = 0;
-var score = 0;
+var finalScore = 0;
 var timeLeft = 100;
+var highScore = [];
 
 //when I click the start button I remove the introduction and I move on to the next step which is to load a question
 let startQuiz = function() {
@@ -173,7 +175,7 @@ function createQuestion(questionID) {
 
     let primaryDiv = document.createElement("div");
     primaryDiv.id = "question" + questionID;
-    primaryDiv.className = "container";
+    primaryDiv.className = "container mainContainer";
 
     let secondDiv = document.createElement("div");
     secondDiv.className = "row align-items-center";
@@ -207,19 +209,20 @@ function checkAnswer(questionID, Answer) {
         // correct.textContent = "Correct!";
         // mainView.appendChild(correct);
         console.log("Correct");
-        score += 10;
+        finalScore += 10;
     } else {
         // let wrong = document.createElement("h2");
         // wrong.className = "title border-top-2";
         // wrong.textContent = "Wrong!";
         // mainView.appendChild(wrong);
         console.log("Wrong");
+        timeLeft -= 10;
     }
+    qID++;
     if (questions[qID] === undefined) {
         gameOver();
     } else {
         removeOld.remove();
-        qID++;
         createQuestion(qID);
     }
 };
@@ -240,6 +243,10 @@ function startTimer() {
 };
 
 function gameOver() {
+    var current = document.querySelector(".mainContainer");
+    if (current !== null) {
+        current.remove();
+    }
     let primaryDiv = document.createElement("div");
     primaryDiv.className = "quiz-end";
 
@@ -266,20 +273,27 @@ function gameOver() {
     let fifthDiv = document.createElement("div");
     fifthDiv.className = ("form-group");
 
-    let label = document.createElement("label");
-    label.className = ("nameInitials");
+    // let label = document.createElement("label");
+    // label.className = ("nameInitials");
 
     let input = document.createElement("input");
     input.id = ("name-initials");
     input.type = ("text");
-    input.name = ("name-initials");
+    // input.name = ("name-initials");
+    input.placeholder = "Enter initials";
+
+    let submitButton = document.createElement("button");
+    submitButton.className = ("btn m-5");
+    submitButton.innerHTML = "<span>Submit</span>";
+    submitButton.setAttribute("onclick", "storeHighScore()");
 
     fifthDiv.appendChild(input);
-    fifthDiv.appendChild(label);
+    // fifthDiv.appendChild(label);
+    fifthDiv.appendChild(submitButton);
     form.appendChild(fifthDiv);
-    fourthDiv.appendChild(form);
-    fourthDiv.appendChild(p);
     fourthDiv.appendChild(h2);
+    fourthDiv.appendChild(p);
+    fourthDiv.appendChild(form);
     thirdDiv.appendChild(fourthDiv);
     secondDiv.appendChild(thirdDiv);
     primaryDiv.appendChild(secondDiv);
@@ -287,22 +301,47 @@ function gameOver() {
 
 };
 
+function storeHighScore() {
+    var obj = {
+        name: document.querySelector("input").value,
+        score: finalScore
+    }
+    highScore.push(obj);
+    localStorage.setItem("highScore", JSON.stringify(highScore));
+    window.location.href = "highscores.html";
+};
 
-//create a question
-// let createQuestion = function() {
-//     let question = document.createElement("h2")
-//     question.className = "question-item"
+function loadHighScore() {
+    var highScores = localStorage.getItem("highScore");
+    if (!highScores) {
+        return false;
+    }
+    highScores = JSON.parse(highScores);
+    for (var i = 0; i < highScores.length; i++) {
+        // pass each task object into the `createTaskEl()` function
+        var temp = {
+            name: highScores[i].name,
+            score: highScores[i].score
+        }
+        highScore.push(temp);
+    }
+    highScore.sort(function(a, b) {
+        return b.score - a.score;
+    })
+};
 
-//     let listChoices = document.createElement("li");
-//     listChoices.className = "choices"
+function clearHighScore() {
+    localStorage.clear();
+    // location.reload();
+}
 
-// };
+function displayHighScore() {
+    for (i = 0; i < highScore.length; i++) {
+        let createEl = document.createElement("li");
+        createEl.className = ("text-start");
+        createEl.textContent = highScore[i].name + " " + highScore[i].score;
+        highScoreList.appendChild(createEl);
+    }
+};
 
-// A question appears and I can see a list of possible answers
-// let loadQuestion = function() {
-//     for (let i = 0; i < questions.length; i++) {
-
-//         break;
-
-//     };
-// };
+loadHighScore();
