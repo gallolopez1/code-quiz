@@ -1,3 +1,7 @@
+/* * {
+    overflow-y: hidden;
+} */
+
 .btn {
     color: white;
     font-weight: bolder;
@@ -56,9 +60,13 @@ a {
     text-align: center;
     align-items: center;
     width: 30%;
-    margin-top: 5vh;
-    margin-bottom: 5vh;
     background-image: linear-gradient(90deg, #FA8BFF 0%, #2BD2FF 52%, #2BFF88 90%);
+}
+
+footer {
+    position: fixed;
+    bottom: 0;
+    text-align: center;
 }
 
 @media only screen and (max-width: 720px) {
@@ -66,8 +74,6 @@ a {
         font-size: 1.1rem;
     }
     #highScoreList {
-        margin-top: 3vh;
-        margin-bottom: 3vh;
         width: 100%;
     }
 }

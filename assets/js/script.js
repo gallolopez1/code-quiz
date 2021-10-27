@@ -182,7 +182,7 @@ function createQuestion(questionID) {
 
     let thirdDiv = document.createElement("div");
     thirdDiv.className = "col-12 d-flex flex-column answers-button text-center align-content-center";
-    thirdDiv.innerHTML = "<h2 class= 'title'</h2>" + "Question " + (questionID + 1) + ": " + questions[questionID].question;
+    thirdDiv.innerHTML = "<h2 class= 'title'</h2>" + "Question " + (questionID + 1) + ": " + "<br /><br />" + questions[questionID].question;
 
     let fourthDiv = document.createElement("div");
     fourthDiv.className = "answers-button d-flex flex-column align-items-center";
@@ -302,13 +302,13 @@ function gameOver() {
 };
 
 function storeHighScore() {
+    window.location.href = "highscores.html";
     var obj = {
         name: document.querySelector("input").value,
         score: finalScore
     }
     highScore.push(obj);
     localStorage.setItem("highScore", JSON.stringify(highScore));
-    window.location.href = "highscores.html";
 };
 
 function loadHighScore() {
