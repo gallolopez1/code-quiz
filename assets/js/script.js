@@ -267,14 +267,9 @@ function gameOver() {
     p.id = ("score")
     p.textContent = "Your final score is " + finalScore;
 
-    let form = document.createElement("form");
-    form.className = ("form");
-
     let fifthDiv = document.createElement("div");
     fifthDiv.className = ("form-group");
 
-    // let label = document.createElement("label");
-    // label.className = ("nameInitials");
 
     let input = document.createElement("input");
     input.id = ("name-initials");
@@ -288,12 +283,10 @@ function gameOver() {
     submitButton.setAttribute("onclick", "storeHighScore()");
 
     fifthDiv.appendChild(input);
-    // fifthDiv.appendChild(label);
     fifthDiv.appendChild(submitButton);
-    form.appendChild(fifthDiv);
     fourthDiv.appendChild(h2);
     fourthDiv.appendChild(p);
-    fourthDiv.appendChild(form);
+    fourthDiv.appendChild(fifthDiv);
     thirdDiv.appendChild(fourthDiv);
     secondDiv.appendChild(thirdDiv);
     primaryDiv.appendChild(secondDiv);
@@ -332,7 +325,7 @@ function loadHighScore() {
 
 function clearHighScore() {
     localStorage.clear();
-    // location.reload();
+    location.reload();
 }
 
 function displayHighScore() {
