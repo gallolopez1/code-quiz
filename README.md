@@ -13,11 +13,15 @@ This is a timed coding quiz (mostly about JavaScript) with multiple-choice quest
 
 ### Quiz Start
 
-<img src="Assets\Images\1.PNG" alt="Quiz Start" />
+<img src="assets\images\quiz-start.PNG" alt="Quiz Start" />
+
+### Quiz End
+
+<img src="assets\images\quiz-end.PNG" alt="High Scores" />
 
 ### High Scores
 
-<img src="Assets\Images\1.PNG" alt="High Scores" />
+<img src="assets\images\high-scores.PNG" alt="High Scores" />
 
 # Activity Instructions:
 
@@ -48,4 +52,3 @@ THEN I can save my initials and score
 ```
 ## References:
 https://getbootstrap.com/
-https://jquery.com/
