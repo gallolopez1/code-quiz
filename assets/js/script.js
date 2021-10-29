@@ -27,127 +27,127 @@ const questions = [{
             "const"
         ],
         answer: "const"
+    },
+    {
+        question: "Which of the following is NOT a data type in JavaScript?",
+        choices: [
+            "number",
+            "string",
+            "character",
+            "boolean"
+        ],
+        answer: "character"
+    },
+    {
+        question: "Which of the following functions will NOT interact with the user?",
+        choices: [
+            "print();",
+            "alert();",
+            "prompt();",
+            "confirm();"
+        ],
+        answer: "print()",
+    },
+    {
+        question: "Of the following logical operators in JavaScript, which one represents (NOT)?",
+        choices: [
+            "||",
+            "&&",
+            "!",
+            "??"
+        ],
+        answer: "!",
+    },
+    {
+        question: "Normally, a loop exists when the condition becomes falsy. But we can force the exit at any time with the special ______ directive.",
+        choices: [
+            "stop",
+            "end",
+            "alert",
+            "break"
+        ],
+        answer: "break",
+    },
+    {
+        question: "A ______ statement can replace multiple (if) checks.",
+        choices: [
+            "switch",
+            "while",
+            "for",
+            "continue"
+        ],
+        answer: "switch",
+    },
+    {
+        question: "A variable inside a function is only visible inside that function and is known as a ______ .",
+        choices: [
+            "local variable",
+            "outer variable",
+            "global variable",
+            "parameter"
+        ],
+        answer: "local variable",
+    },
+    {
+        question: "The ______ helps with the process of finding and fixing errors within a script.",
+        choices: [
+            "DOM",
+            "console.log()",
+            "debugger",
+            "parameter"
+        ],
+        answer: "debugger",
+    },
+    {
+        question: " ______ appends new elements to the end of an array, and returns the new length of an array.",
+        choices: [
+            "concat()",
+            "push()",
+            ".join",
+            "parseInt()"
+        ],
+        answer: "push()",
+    },
+    {
+        question: " When saving to local storage, remember to ______ in order to convert the object to a string.",
+        choices: [
+            "Storage.setItem()",
+            "JSON.parse()",
+            "JSON.stringify()",
+            "Storage.getItem()"
+        ],
+        answer: "JSON.stringify()",
+    },
+    {
+        question: " ______ executes the callback repeatedly at a set interval.",
+        choices: [
+            "setTimeout()",
+            "loop",
+            "callback",
+            "setInterval()"
+        ],
+        answer: "setInterval",
+    },
+    {
+        question: " Which is a DOM element method?",
+        choices: [
+            "setAttribute()",
+            "getAttribute()",
+            "removeAttribute()",
+            "All of the above"
+        ],
+        answer: "All of the above",
+    },
+    {
+        question: " This library includes new methods to make elements sortable, draggable, droppable, etc.",
+        choices: [
+            "jQuery",
+            "Bootstrap",
+            "Moment.js",
+            "jQuery UI"
+        ],
+        answer: "jQuery UI",
     }
-    // {
-    //     question: "Which of the following is NOT a data type in JavaScript?",
-    //     choices: [
-    //         "number",
-    //         "string",
-    //         "character",
-    //         "boolean"
-    //     ],
-    //     answer: "character"
-    // },
-    // {
-    //     question: "Which of the following functions will NOT interact with the user?",
-    //     choices: [
-    //         "print();",
-    //         "alert();",
-    //         "prompt();",
-    //         "confirm();"
-    //     ],
-    //     answer: "print()",
-    // },
-    // {
-    //     question: "Of the following logical operators in JavaScript, which one represents (NOT)?",
-    //     choices: [
-    //         "||",
-    //         "&&",
-    //         "!",
-    //         "??"
-    //     ],
-    //     answer: "!",
-    // },
-    // {
-    //     question: "Normally, a loop exists when the condition becomes falsy. But we can force the exit at any time with the special ______ directive.",
-    //     choices: [
-    //         "stop",
-    //         "end",
-    //         "alert",
-    //         "break"
-    //     ],
-    //     answer: "break",
-    // },
-    // {
-    //     question: "A ______ statement can replace multiple (if) checks.",
-    //     choices: [
-    //         "switch",
-    //         "while",
-    //         "for",
-    //         "continue"
-    //     ],
-    //     answer: "switch",
-    // },
-    // {
-    //     question: "A variable inside a function is only visible inside that function and is known as a ______ .",
-    //     choices: [
-    //         "local variable",
-    //         "outer variable",
-    //         "global variable",
-    //         "parameter"
-    //     ],
-    //     answer: "local variable",
-    // },
-    // {
-    //     question: "The ______ helps with the process of finding and fixing errors within a script.",
-    //     choices: [
-    //         "DOM",
-    //         "console.log()",
-    //         "debugger",
-    //         "parameter"
-    //     ],
-    //     answer: "debugger",
-    // },
-    // {
-    //     question: " ______ appends new elements to the end of an array, and returns the new length of an array.",
-    //     choices: [
-    //         "concat()",
-    //         "push()",
-    //         ".join",
-    //         "parseInt()"
-    //     ],
-    //     answer: "push()",
-    // },
-    // {
-    //     question: " When saving to local storage, remember to ______ in order to convert the object to a string.",
-    //     choices: [
-    //         "Storage.setItem()",
-    //         "JSON.parse()",
-    //         "JSON.stringify()",
-    //         "Storage.getItem()"
-    //     ],
-    //     answer: "JSON.stringify()",
-    // },
-    // {
-    //     question: " ______ executes the callback repeatedly at a set interval.",
-    //     choices: [
-    //         "set.Timeou()",
-    //         "loop",
-    //         "callback",
-    //         "setInterval"
-    //     ],
-    //     answer: "setInterval",
-    // },
-    // {
-    //     question: " Which is a DOM element method?",
-    //     choices: [
-    //         "setAttribute()",
-    //         "getAttribute()",
-    //         "removeAttribute()",
-    //         "All of the above"
-    //     ],
-    //     answer: "All of the above",
-    // },
-    // {
-    //     question: " This library includes new methods to make elements sortable, draggable, droppable, etc.",
-    //     choices: [
-    //         "jQuery",
-    //         "Bootstrap",
-    //         "Moment.js",
-    //         "jQuery UI"
-    //     ],
-    //     answer: "jQuery UI",
-    // }
 ];
 // setAttribute
 // removeAttribute
