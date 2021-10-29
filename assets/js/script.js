@@ -158,6 +158,7 @@ let generateBtn = document.querySelector("#btn-start")
 var mainView = document.querySelector("main");
 var timerEl = document.querySelector("#timer");
 var highScoreList = document.querySelector("#highScoreList");
+let correctWrong = document.querySelector(".correct-wrong");
 var qID = 0;
 var finalScore = 0;
 var timeLeft = 100;
@@ -204,17 +205,11 @@ function createQuestion(questionID) {
 function checkAnswer(questionID, Answer) {
     var removeOld = document.querySelector("#question" + questionID);
     if (Answer === questions[questionID].answer) {
-        // let correct = document.createElement("h2");
-        // correct.className = "title border-top-2";
-        // correct.textContent = "Correct!";
-        // mainView.appendChild(correct);
+        correctAnswer();
         console.log("Correct");
         finalScore += 10;
     } else {
-        // let wrong = document.createElement("h2");
-        // wrong.className = "title border-top-2";
-        // wrong.textContent = "Wrong!";
-        // mainView.appendChild(wrong);
+        wrongAnswer();
         console.log("Wrong");
         timeLeft -= 10;
     }
@@ -239,7 +234,29 @@ function startTimer() {
             clearInterval(timeInternal);
             gameOver();
         }
-    }, 1000)
+    }, 1000);
+};
+
+function correctAnswer() {
+    let correct = document.createElement("h2");
+    correct.className = "title border-top w-50 d-flex justify-content-center";
+    correct.textContent = "Correct!";
+    correctWrong.appendChild(correct);
+    setTimeout(function() {
+        correct.remove();
+    }, 1100);
+
+};
+
+function wrongAnswer() {
+    let wrong = document.createElement("h2");
+    wrong.className = "title border-top w-50 d-flex justify-content-center";
+    wrong.textContent = "Wrong!";
+    correctWrong.appendChild(wrong);
+    setTimeout(function() {
+        wrong.remove();
+    }, 1100);
+
 };
 
 function gameOver() {
